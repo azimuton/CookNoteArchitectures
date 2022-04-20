@@ -14,7 +14,7 @@
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="0dp"
-            android:layout_height="200dp"
+            android:layout_height="150dp"
             android:layout_marginTop="8dp"
             android:src="@drawable/miaso"
             app:layout_constraintEnd_toEndOf="parent"
@@ -22,14 +22,17 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvSoup"
+            android:id="@+id/rvMeat"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/adView"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2"
-            app:layout_constraintVertical_bias="0.503">
+            app:layout_constraintTop_toBottomOf="@+id/imageView2">
 
         </androidx.recyclerview.widget.RecyclerView>
 
@@ -39,23 +42,23 @@
             android:layout_height="wrap_content"
             app:adSize="BANNER"
             app:adUnitId="ca-app-pub-3940256099942544/6300978111"
-            app:layout_constraintBottom_toBottomOf="@+id/rvSoup"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/rvSoup" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabAddSoup"
+            android:id="@+id/fabAddMeat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="60dp"
+            android:layout_marginBottom="8dp"
             android:alpha="0.5"
             android:backgroundTint="#EF0A0A"
-            android:clickable="true"
             android:src="@drawable/ic_baseline_add_24"
-            app:layout_constraintBottom_toBottomOf="@+id/rvSoup"
-            app:layout_constraintEnd_toEndOf="@+id/rvSoup"
+            app:layout_constraintBottom_toBottomOf="@+id/rvMeat"
+            app:layout_constraintEnd_toEndOf="@+id/rvMeat"
             tools:ignore="SpeakableTextPresentCheck" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

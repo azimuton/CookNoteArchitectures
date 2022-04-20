@@ -12,6 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CookNoteArchitectures">
         <activity
+            android:name=".presentation.editactivities.EditZakuskiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.editactivities.EditSoupActivity"
+            android:exported="false" />
+        <activity android:name=".presentation.editactivities.EditMeatActivity" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -20,6 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3940256099942544~3347511713" />

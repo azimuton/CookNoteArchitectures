@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.android.material.tabs.TabLayoutMediator
 import com.jkdajac.cooknotearchitectures.presentation.adapters.MainViewPagerAdapter
+import com.jkdajac.cooknotearchitectures.presentation.fragments.DepthPageTransformer
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -19,6 +20,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         initial()
     }
+
+//    fun animate() {
+//        val sunRiseAnimation: Animation = AnimationUtils.loadAnimation(this, R.anim.alfaperehod)
+//        vpMainPager.startAnimation(sunRiseAnimation)
+//    }
     private fun initial() {
         vpMainPager.adapter = MainViewPagerAdapter(this)
         tlTabMain.tabIconTint = null
@@ -28,38 +34,47 @@ class MainActivity : AppCompatActivity() {
                 0 -> {
                     tab.text = "Мясо и рыба"
                     tab.icon?.setTint(ContextCompat.getColor(this, R.color.tab_icon))
+                    vpMainPager.setPageTransformer(DepthPageTransformer())
                 }
                 1 -> {
                     tab.text = "Первые блюда"
                     tab.icon?.setTint(ContextCompat.getColor(this, R.color.tab_icon))
+                    vpMainPager.setPageTransformer(DepthPageTransformer())
                 }
                 2 -> {
                     tab.text = "Закуски"
                     tab.icon?.setTint(ContextCompat.getColor(this, R.color.tab_icon))
+                    vpMainPager.setPageTransformer(DepthPageTransformer())
                 }
                 3 -> {
                     tab.text = "Салаты"
                     tab.icon?.setTint(ContextCompat.getColor(this, R.color.tab_icon))
+                    vpMainPager.setPageTransformer(DepthPageTransformer())
                 }
                 4 -> {
                     tab.text = "Выпечка"
                     tab.icon?.setTint(ContextCompat.getColor(this, R.color.tab_icon))
+                    vpMainPager.setPageTransformer(DepthPageTransformer())
                 }
                 5 -> {
                     tab.text = "Десерты"
                     tab.icon?.setTint(ContextCompat.getColor(this, R.color.tab_icon))
+                    vpMainPager.setPageTransformer(DepthPageTransformer())
                 }
                 6 -> {
                     tab.text = "Соусы"
                     tab.icon?.setTint(ContextCompat.getColor(this, R.color.tab_icon))
+                    vpMainPager.setPageTransformer(DepthPageTransformer())
                 }
                 7 -> {
                     tab.text = "Соленья"
                     tab.icon?.setTint(ContextCompat.getColor(this, R.color.tab_icon))
+                    vpMainPager.setPageTransformer(DepthPageTransformer())
                 }
                 8 -> {
                     tab.text = "Полезные советы"
                     tab.icon?.setTint(ContextCompat.getColor(this, R.color.tab_icon))
+                    vpMainPager.setPageTransformer(DepthPageTransformer())
                 }
             }
 
