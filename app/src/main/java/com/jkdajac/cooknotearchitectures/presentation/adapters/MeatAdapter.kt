@@ -1,4 +1,4 @@
-package com.jkdajac.cookingnote.adapters
+package com.jkdajac.cooknotearchitectures.presentation.adapters
 
 import android.content.Context
 import android.content.Intent
@@ -9,11 +9,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
-import com.jkdajac.cookingnote.MyIntentConstance
+import com.jkdajac.cooknotearchitectures.MyIntentConstance
 import com.jkdajac.cooknotearchitectures.presentation.editactivities.EditMeatActivity
 import com.jkdajac.cooknotearchitectures.R
 import com.jkdajac.cooknotearchitectures.presentation.fragments.MeatFragment
-import com.jkdajac.data.storage.entity.Meat
+import com.jkdajac.data.roomstorage.entity.Meat
 import kotlinx.android.synthetic.main.activity_edit_meat.view.*
 import kotlinx.android.synthetic.main.item_meat.view.*
 
@@ -32,7 +32,7 @@ class MeatAdapter(
         holder.setData(meatList[position])
         holder.title?.text = meatList[position].dbmeattitle
         //holder.content?.text = meatList[position].dbmeatcontent
-        holder.image?.setImageURI(meatList[position].dbmeatimage.toUri())
+        holder.image?.setImageURI(meatList[position].dbmeatimage?.toUri())
         holder.deleteItem?.setOnClickListener {
             callback.deleteItem(position)
         }

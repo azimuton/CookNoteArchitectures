@@ -9,15 +9,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
-import com.jkdajac.cookingnote.MyIntentConstance
+import com.jkdajac.cooknotearchitectures.MyIntentConstance
 import com.jkdajac.cooknotearchitectures.R
-import com.jkdajac.cooknotearchitectures.presentation.editactivities.EditSoupActivity
 import com.jkdajac.cooknotearchitectures.presentation.editactivities.EditZakuskiActivity
-import com.jkdajac.cooknotearchitectures.presentation.fragments.SoupFragment
 import com.jkdajac.cooknotearchitectures.presentation.fragments.ZakuskiFragment
-import com.jkdajac.data.storage.entity.Soup
-import com.jkdajac.data.storage.entity.Zakuski
-import kotlinx.android.synthetic.main.item_soup.view.*
+import com.jkdajac.data.roomstorage.entity.Zakuski
 import kotlinx.android.synthetic.main.item_zakuski.view.*
 
 class ZakuskiAdapter (val contextA: Context,

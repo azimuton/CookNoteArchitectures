@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/FrameLayout01"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SurfaceView
+        android:id="@+id/SurfaceView01"
+        android:layout_width="105dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="127dp"
+        android:layout_marginEnd="132dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></SurfaceView>
+
+    <Button
+        android:id="@+id/Button01"
+        android:layout_width="109dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="166dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="118dp"
+        android:text="Button01"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SurfaceView01"
+        tools:ignore="SpeakableTextPresentCheck"></Button>
+</androidx.constraintlayout.widget.ConstraintLayout>

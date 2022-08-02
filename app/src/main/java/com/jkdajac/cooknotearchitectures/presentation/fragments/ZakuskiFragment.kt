@@ -12,14 +12,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
 import com.jkdajac.cooknotearchitectures.R
-import com.jkdajac.cooknotearchitectures.presentation.adapters.SoupAdapter
 import com.jkdajac.cooknotearchitectures.presentation.adapters.ZakuskiAdapter
-import com.jkdajac.cooknotearchitectures.presentation.editactivities.EditSoupActivity
 import com.jkdajac.cooknotearchitectures.presentation.editactivities.EditZakuskiActivity
-import com.jkdajac.data.storage.AppDatabase
-import com.jkdajac.data.storage.entity.Soup
-import com.jkdajac.data.storage.entity.Zakuski
-import kotlinx.android.synthetic.main.fragment_soup.*
+import com.jkdajac.data.roomstorage.AppDatabase
+import com.jkdajac.data.roomstorage.entity.Zakuski
 import kotlinx.android.synthetic.main.fragment_zakuski.*
 
 lateinit var zakuskiDatabase : AppDatabase
@@ -69,7 +65,7 @@ class ZakuskiFragment : Fragment(), ZakuskiAdapter.ViewHolder.ItemCallback {
         adView3?.destroy()
     }
     private fun initAdMob3(){
-        MobileAds.initialize(context)
+        MobileAds.initialize(requireContext())
         val adRequest3 = AdRequest.Builder().build()
         adView3?.loadAd(adRequest3)
     }

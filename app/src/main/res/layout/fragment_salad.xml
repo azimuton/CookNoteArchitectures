@@ -12,7 +12,7 @@
         android:background="#B3F3FB">
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/imageViewNapitki"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_marginTop="8dp"
@@ -26,11 +26,14 @@
             android:id="@+id/rvSalad"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewNapitki"
             app:layout_constraintVertical_bias="0.0" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -52,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:adSize="BANNER"
-            app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+            app:adUnitId="ca-app-pub-6476407778763901/7735036431"
             app:layout_constraintBottom_toBottomOf="@+id/rvSalad"
             app:layout_constraintEnd_toEndOf="@+id/rvSalad"
             app:layout_constraintStart_toStartOf="@+id/rvSalad" />

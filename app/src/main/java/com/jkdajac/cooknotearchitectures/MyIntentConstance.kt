@@ -1,9 +1,10 @@
-package com.jkdajac.cookingnote
+package com.jkdajac.cooknotearchitectures
 
 object MyIntentConstance {
     const val I_NAME_KEY = "name_key"
     const val I_CONTENT_KEY = "content_key"
     const val I_IMAGE_KEY = "image_key"
+    const val I_ID_KEY = "id_key"
     const val I_BLUDANAME_KEY = "bludaname_key"
     const val I_BLUDACONTENT_KEY = "bludacontent_key"
     const val I_ZAKUSKINAME_KEY = "zakuskiname_key"

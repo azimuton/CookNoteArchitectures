@@ -4,15 +4,13 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
-import com.jkdajac.cookingnote.MyIntentConstance
+import com.jkdajac.cooknotearchitectures.MyIntentConstance
 import com.jkdajac.cooknotearchitectures.R
 import com.jkdajac.cooknotearchitectures.presentation.fragments.SoupFragment
-import com.jkdajac.data.storage.AppDatabase
-import com.jkdajac.data.storage.entity.Soup
-import kotlinx.android.synthetic.main.activity_edit_meat.*
+import com.jkdajac.data.roomstorage.AppDatabase
+import com.jkdajac.data.roomstorage.entity.Soup
 import kotlinx.android.synthetic.main.activity_edit_soup.*
 
 class EditSoupActivity : AppCompatActivity() {
@@ -76,7 +74,7 @@ class EditSoupActivity : AppCompatActivity() {
     fun chooseImage(){
         val photoPickerIntent = Intent(Intent.ACTION_OPEN_DOCUMENT)
         photoPickerIntent.type = "image/*"
-        photoPickerIntent.flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
+        //photoPickerIntent.flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
         startActivityForResult(photoPickerIntent, Pick_image)
     }
 
@@ -87,6 +85,7 @@ class EditSoupActivity : AppCompatActivity() {
             //объект и отображаем в элементе ImageView нашего интерфейса:
             ivEditSoup.setImageURI(data?.data)
             tempImageUri = data?.data.toString()
+            contentResolver.takePersistableUriPermission(data?.data!!, Intent.FLAG_GRANT_READ_URI_PERMISSION)
         }
 
     }
@@ -95,7 +94,7 @@ class EditSoupActivity : AppCompatActivity() {
         val i = intent
         if (i != null) {
             if (i.getStringExtra(MyIntentConstance.I_NAME_KEY) != null) {
-                fabAddGalleryEditSoup.visibility = View.GONE
+                //fabAddGalleryEditSoup.visibility = View.GONE
                 etEditSoupTitle.setText(i.getStringExtra(MyIntentConstance.I_NAME_KEY))
                 etEditSoupContent.setText(i.getStringExtra(MyIntentConstance.I_CONTENT_KEY))
                 if(i.getStringExtra(MyIntentConstance.I_IMAGE_KEY) != "empty"){

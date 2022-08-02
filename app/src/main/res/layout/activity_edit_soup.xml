@@ -74,7 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="8dp"
         android:alpha="0.6"
         android:backgroundTint="#654009"
         android:clickable="true"
@@ -125,17 +125,6 @@
                 app:layout_constraintEnd_toEndOf="@+id/ivEditSoup"
                 app:layout_constraintTop_toTopOf="@+id/ivEditSoup"
                 app:srcCompat="@drawable/ic_baseline_edit_24" />
-
-            <ImageView
-                android:id="@+id/ivCameraEditSoup"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="8dp"
-                android:background="#A8A7A7"
-                app:layout_constraintBottom_toTopOf="@+id/ivDeleteEditSoup"
-                app:layout_constraintEnd_toEndOf="@+id/ivEditSoup"
-                app:layout_constraintTop_toBottomOf="@+id/ivEditEditSoup"
-                app:srcCompat="@drawable/ic_baseline_camera_alt_24" />
 
             <ImageView
                 android:id="@+id/ivDeleteEditSoup"

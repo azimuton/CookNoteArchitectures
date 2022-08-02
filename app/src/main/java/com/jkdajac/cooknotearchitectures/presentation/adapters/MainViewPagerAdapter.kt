@@ -7,7 +7,7 @@ import com.jkdajac.cooknotearchitectures.presentation.fragments.*
 
 class MainViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
     override fun getItemCount(): Int {
-        return 9
+        return 10
     }
 
     override fun createFragment(position: Int): Fragment {
@@ -20,6 +20,7 @@ class MainViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAd
             5 -> DesertiFragment()
             6 -> SousFragment()
             7 -> SoleniaFragment()
+            8 -> NapitkiFragment()
             else -> SovetiFragment()
         }
     }

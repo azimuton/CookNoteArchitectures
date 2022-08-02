@@ -6,14 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.jkdajac.cookingnote.MyIntentConstance
+import com.jkdajac.cooknotearchitectures.MyIntentConstance
 import com.jkdajac.cooknotearchitectures.R
-import com.jkdajac.cooknotearchitectures.presentation.fragments.SoupFragment
 import com.jkdajac.cooknotearchitectures.presentation.fragments.ZakuskiFragment
-import com.jkdajac.data.storage.AppDatabase
-import com.jkdajac.data.storage.entity.Soup
-import com.jkdajac.data.storage.entity.Zakuski
-import kotlinx.android.synthetic.main.activity_edit_soup.*
+import com.jkdajac.data.roomstorage.AppDatabase
+import com.jkdajac.data.roomstorage.entity.Zakuski
 import kotlinx.android.synthetic.main.activity_edit_zakuski.*
 
 class EditZakuskiActivity : AppCompatActivity() {
@@ -76,7 +73,7 @@ class EditZakuskiActivity : AppCompatActivity() {
     fun chooseImage(){
         val photoPickerIntent = Intent(Intent.ACTION_OPEN_DOCUMENT)
         photoPickerIntent.type = "image/*"
-        photoPickerIntent.flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
+        //photoPickerIntent.flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
         startActivityForResult(photoPickerIntent, Pick_image)
     }
 
@@ -87,6 +84,7 @@ class EditZakuskiActivity : AppCompatActivity() {
             //объект и отображаем в элементе ImageView нашего интерфейса:
             ivEditZakuski.setImageURI(data?.data)
             tempImageUri = data?.data.toString()
+            contentResolver.takePersistableUriPermission(data?.data!!, Intent.FLAG_GRANT_READ_URI_PERMISSION)
         }
 
     }
@@ -95,7 +93,7 @@ class EditZakuskiActivity : AppCompatActivity() {
         val i = intent
         if (i != null) {
             if (i.getStringExtra(MyIntentConstance.I_NAME_KEY) != null) {
-                fabAddGalleryEditZakuski.visibility = View.GONE
+                //fabAddGalleryEditZakuski.visibility = View.GONE
                 etEditZakuskiTitle.setText(i.getStringExtra(MyIntentConstance.I_NAME_KEY))
                 etEditZakuskiContent.setText(i.getStringExtra(MyIntentConstance.I_CONTENT_KEY))
                 if(i.getStringExtra(MyIntentConstance.I_IMAGE_KEY) != "empty"){

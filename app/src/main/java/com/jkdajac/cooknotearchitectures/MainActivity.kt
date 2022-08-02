@@ -5,6 +5,7 @@ import android.view.View
 import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.google.android.gms.ads.MobileAds
 import com.google.android.material.tabs.TabLayoutMediator
 import com.jkdajac.cooknotearchitectures.presentation.adapters.MainViewPagerAdapter
 import com.jkdajac.cooknotearchitectures.presentation.fragments.DepthPageTransformer
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
             View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // скрываем нижнюю панель навигации
                     or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) //появляется поверх активити и исчезает
         setContentView(R.layout.activity_main)
+        MobileAds.initialize(this) {}
         initial()
     }
 
@@ -72,6 +74,11 @@ class MainActivity : AppCompatActivity() {
                     vpMainPager.setPageTransformer(DepthPageTransformer())
                 }
                 8 -> {
+                    tab.text = "Напитки и коктейли"
+                    tab.icon?.setTint(ContextCompat.getColor(this, R.color.tab_icon))
+                    vpMainPager.setPageTransformer(DepthPageTransformer())
+                }
+                9 -> {
                     tab.text = "Полезные советы"
                     tab.icon?.setTint(ContextCompat.getColor(this, R.color.tab_icon))
                     vpMainPager.setPageTransformer(DepthPageTransformer())

@@ -3,6 +3,8 @@
     package="com.jkdajac.cooknotearchitectures">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -12,25 +14,67 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CookNoteArchitectures">
         <activity
+            android:name=".presentation.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity
+            android:name=".presentation.MainActivity33"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.editactivities.EditNapitkiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.editactivities.EditSovetiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.editactivities.EditSoleniaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.editactivities.EditSousActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.editactivities.EditDesertiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.editactivities.EditVipechkaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.editactivities.EditSaladActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.editactivities.EditZakuskiActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.editactivities.EditSoupActivity"
             android:exported="false" />
         <activity android:name=".presentation.editactivities.EditMeatActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.vlemonn.blog.captureimage.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="true"
+            android:screenOrientation="portrait">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713" />
+            android:value="ca-app-pub-6476407778763901~7281123758" />
     </application>
 
 </manifest>

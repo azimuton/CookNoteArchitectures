@@ -12,14 +12,11 @@ import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
-import com.jkdajac.cookingnote.adapters.MeatAdapter
 import com.jkdajac.cooknotearchitectures.R
 import com.jkdajac.cooknotearchitectures.presentation.adapters.SoupAdapter
 import com.jkdajac.cooknotearchitectures.presentation.editactivities.EditSoupActivity
-import com.jkdajac.data.storage.AppDatabase
-import com.jkdajac.data.storage.entity.Meat
-import com.jkdajac.data.storage.entity.Soup
-import kotlinx.android.synthetic.main.fragment_meat.*
+import com.jkdajac.data.roomstorage.AppDatabase
+import com.jkdajac.data.roomstorage.entity.Soup
 import kotlinx.android.synthetic.main.fragment_soup.*
 
 @SuppressLint("StaticFieldLeak")
@@ -96,7 +93,7 @@ class SoupFragment : Fragment(), SoupAdapter.ViewHolder.ItemCallback  {
         adView2?.destroy()
     }
     private fun initAdMob2(){
-        MobileAds.initialize(context)
+        MobileAds.initialize(requireContext())
         val adRequest2 = AdRequest.Builder().build()
         adView2?.loadAd(adRequest2)
     }

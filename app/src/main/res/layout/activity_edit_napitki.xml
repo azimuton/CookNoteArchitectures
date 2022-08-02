@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/etEditNapitkiTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@android:drawable/editbox_background"
+        android:backgroundTint="#988E2E"
+        android:ems="10"
+        android:gravity="start"
+        android:hint="Введите название рецепта"
+        android:inputType="textMultiLine|textPersonName"
+        android:padding="8dp"
+        android:shadowColor="#040303"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textColorLink="@color/purple_500"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/etEditNapitkiContent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:drawable/editbox_background"
+        android:backgroundTint="#988E2E"
+        android:ems="10"
+        android:gravity="start"
+        android:hint="Напишите здесь свой рецепт"
+        android:inputType="textMultiLine|textPersonName"
+        android:padding="8dp"
+        android:shadowColor="#040303"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textColorLink="@color/purple_500"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/etEditNapitkiTitle"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="@+id/etEditNapitkiTitle"
+        app:layout_constraintTop_toBottomOf="@+id/cvEditNapitki"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingNapitkiSaved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:alpha="0.6"
+        android:clickable="true"
+        app:backgroundTint="#654009"
+        app:layout_constraintBottom_toBottomOf="@+id/etEditNapitkiContent"
+        app:layout_constraintEnd_toEndOf="@+id/etEditNapitkiContent"
+        app:srcCompat="@android:drawable/ic_menu_save"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddGalleryEditNapitki"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
+        android:alpha="0.6"
+        android:backgroundTint="#654009"
+        android:clickable="true"
+        app:layout_constraintBottom_toTopOf="@+id/floatingNapitkiSaved"
+        app:layout_constraintEnd_toEndOf="@+id/etEditNapitkiContent"
+        app:srcCompat="@android:drawable/ic_menu_gallery"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvEditNapitki"
+        android:layout_width="0dp"
+        android:layout_height="210dp"
+        android:layout_margin="4dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#988E2E"
+        android:padding="8dp"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/etEditNapitkiTitle"
+        app:layout_constraintStart_toStartOf="@+id/etEditNapitkiTitle"
+        app:layout_constraintTop_toBottomOf="@+id/etEditNapitkiTitle">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivEditNapitki"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:backgroundTint="#A58F6F"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <ImageView
+                android:id="@+id/ivEditEditNapitki"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="#A8A7A7"
+                app:layout_constraintEnd_toEndOf="@+id/ivEditNapitki"
+                app:layout_constraintTop_toTopOf="@+id/ivEditNapitki"
+                app:srcCompat="@drawable/ic_baseline_edit_24" />
+
+            <ImageView
+                android:id="@+id/ivDeleteEditNapitki"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="#A8A7A7"
+                app:layout_constraintBottom_toBottomOf="@+id/ivEditNapitki"
+                app:layout_constraintEnd_toEndOf="@+id/ivEditNapitki"
+                app:srcCompat="@drawable/ic_baseline_delete_24" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

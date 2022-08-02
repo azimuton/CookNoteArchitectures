@@ -11,11 +11,11 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
-import com.jkdajac.cookingnote.adapters.MeatAdapter
+import com.jkdajac.cooknotearchitectures.presentation.adapters.MeatAdapter
 import com.jkdajac.cooknotearchitectures.presentation.editactivities.EditMeatActivity
 import com.jkdajac.cooknotearchitectures.R
-import com.jkdajac.data.storage.AppDatabase
-import com.jkdajac.data.storage.entity.Meat
+import com.jkdajac.data.roomstorage.AppDatabase
+import com.jkdajac.data.roomstorage.entity.Meat
 import kotlinx.android.synthetic.main.fragment_meat.*
 
 lateinit var adapter: MeatAdapter
